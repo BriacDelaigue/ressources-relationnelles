@@ -33,4 +33,9 @@ public class IndexController {
     public String profil() {
         return "user-profil";
     }
+
+    @GetMapping(value = "/read")
+    public String read() {
+        return "read-ressource";
+    }
 }
