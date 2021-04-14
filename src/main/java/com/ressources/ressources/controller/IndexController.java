@@ -28,4 +28,9 @@ public class IndexController {
     public String create() {
         return "create-ressource";
     }
+
+    @GetMapping(value = "/user")
+    public String profil() {
+        return "user-profil";
+    }
 }
