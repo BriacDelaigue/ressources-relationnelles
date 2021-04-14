@@ -25,7 +25,7 @@
         <!-- ============================================================== -->
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand" href="index.html">Ressources Relationnelles</a>
+                <a class="navbar-brand" href="index">Ressources Relationnelles</a>
 
                 <div style="margin-left: 100px;">
                     <a href="index.html" class="mr-2"><button class="btn">Mes actualités</button></a>
@@ -43,9 +43,17 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link" href="/create" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-fw fa-plus"></i></a>
                         </li>
-                        <li class="nav-item dropdown connection">
+                        <li class="nav-item dropdown nav-user">
                             <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-fw fa-user"></i></a>
+                            <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
+                                <div class="nav-user-info">
+                                    <h5 class="mb-0 text-white nav-user-name">Briac Delaigue</h5>
+                                </div>
+                                <a class="dropdown-item" href="user"><i class="fas fa-user mr-2"></i>Profil</a>
+                                <a class="dropdown-item" href="logout"><i class="fas fa-power-off mr-2"></i>Déconnexion</a>
+                            </div>
                         </li>
+
                         <li class="nav-item dropdown connection">
                             <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-fw fa-power-off"></i></a>
                         </li>
@@ -53,22 +61,12 @@
                 </div>
             </nav>
         </div>
-        <!-- ============================================================== -->
-        <!-- end navbar -->
-        <!-- ============================================================== -->
-
-        <!-- ============================================================== -->
-        <!-- Div center  -->
-        <!-- ============================================================== -->
         <div class="force-center">
             <div class="dashboard-wrapper">
                 <div class="dashboard-ecommerce">
                     <div class="container-fluid dashboard-content ">
                         <div class="ecommerce-widget">
                                 <div class="row">
-                                    <!-- ============================================================== -->
-                                    <!-- Page content  -->
-                                    <!-- ============================================================== -->
                                 </div>
                             </div>
                         </div>
