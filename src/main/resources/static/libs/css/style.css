@@ -2100,7 +2100,7 @@ Pageheader
     color: #71748d;
     background-color: #fff;
     width: 100%;
-    position: absolute;
+    align-content: end;
     bottom: 0;
 }
 

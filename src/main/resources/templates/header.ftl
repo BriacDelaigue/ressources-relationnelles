@@ -68,37 +68,21 @@
             </div>
         </div>
     </div>
-
-    <div class="footer">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                    Copyright © 2021 Ressources Relationnelles. Tous droits réservés.
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                    <div class="text-md-right footer-links d-none d-sm-block">
-                        <a href="javascript: void(0);">A Propos</a>
-                        <a href="javascript: void(0);">Support</a>
-                        <a href="javascript: void(0);">Nous contacter</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+</div>
 
 
-    <script src="<@spring.url'/vendor/jquery/jquery-3.3.1.min.js'/>"></script>
-    <script src="<@spring.url'/vendor/bootstrap/js/bootstrap.bundle.js'/>"></script>
-    <script src="<@spring.url'/vendor/slimscroll/jquery.slimscroll.js'/>"></script>
-    <script src="<@spring.url'/libs/js/main-js.js'/>"></script>
-    <script src="<@spring.url'/vendor/charts/chartist-bundle/chartist.min.js'/>"></script>
-    <script src="<@spring.url'/vendor/charts/sparkline/jquery.sparkline.js'/>"></script>
-    <script src="<@spring.url'/vendor/charts/morris-bundle/raphael.min.js'/>"></script>
-    <script src="<@spring.url'/vendor/charts/morris-bundle/morris.js'/>"></script>
-    <script src="<@spring.url'/vendor/charts/c3charts/c3.min.js'/>"></script>
-    <script src="<@spring.url'/vendor/charts/c3charts/d3-5.4.0.min.js'/>"></script>
-    <script src="<@spring.url'/vendor/charts/c3charts/C3chartjs.js'/>"></script>
-    <script src="<@spring.url'/libs/js/dashboard-ecommerce.js'/>"></script>
+<script src="<@spring.url'/vendor/jquery/jquery-3.3.1.min.js'/>"></script>
+<script src="<@spring.url'/vendor/bootstrap/js/bootstrap.bundle.js'/>"></script>
+<script src="<@spring.url'/vendor/slimscroll/jquery.slimscroll.js'/>"></script>
+<script src="<@spring.url'/libs/js/main-js.js'/>"></script>
+<script src="<@spring.url'/vendor/charts/chartist-bundle/chartist.min.js'/>"></script>
+<script src="<@spring.url'/vendor/charts/sparkline/jquery.sparkline.js'/>"></script>
+<script src="<@spring.url'/vendor/charts/morris-bundle/raphael.min.js'/>"></script>
+<script src="<@spring.url'/vendor/charts/morris-bundle/morris.js'/>"></script>
+<script src="<@spring.url'/vendor/charts/c3charts/c3.min.js'/>"></script>
+<script src="<@spring.url'/vendor/charts/c3charts/d3-5.4.0.min.js'/>"></script>
+<script src="<@spring.url'/vendor/charts/c3charts/C3chartjs.js'/>"></script>
+<script src="<@spring.url'/libs/js/dashboard-ecommerce.js'/>"></script>
 
 </body>
 </html>
