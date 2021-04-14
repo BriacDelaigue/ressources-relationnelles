@@ -15,7 +15,8 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"></span>
                                     </div>
-                                    <input type="text" class="form-control" id="username" placeholder="Titre" required="">
+                                    <input type="text" class="form-control" id="username" placeholder="Titre"
+                                           required="">
                                     <div class="invalid-feedback" style="width: 100%;">
                                         Le titre est obligatoire
                                     </div>
@@ -27,7 +28,8 @@
                             </div>
                             <div class="custom-file mb-3">
                                 <input type="file" class="custom-file-input" id="customFile">
-                                <label class="custom-file-label" for="customFile"><i class="fas fa-fw fa-file"></i>   Fichier</label>
+                                <label class="custom-file-label" for="customFile"><i class="fas fa-fw fa-file"></i>
+                                    Fichier</label>
                             </div>
                             <div class="row">
                                 <div class="col-md-3 mb-3">
@@ -83,7 +85,8 @@
                             </div>
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="save-info">
-                                <label class="custom-control-label" for="save-info">En publiant ma ressource je certifie avoir pris connaissance des conditions de publication.</label>
+                                <label class="custom-control-label" for="save-info">En publiant ma ressource je certifie
+                                    avoir pris connaissance des conditions de publication.</label>
                             </div>
                             <hr class="mb-4">
                             <button class="btn btn-primary btn-lg btn-block" type="submit">Publier ma ressource</button>
@@ -95,5 +98,3 @@
     </div>
 </div>
 </div>
-
-<#include "footer.ftl">
