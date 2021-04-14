@@ -7,7 +7,6 @@
                     <div class="card-header">
                         <h4 class="mb-0">Création d'une ressource</h4>
                     </div>
-
                     <div class="card-body">
                         <form class="needs-validation" novalidate="">
                             <div class="mb-3">
