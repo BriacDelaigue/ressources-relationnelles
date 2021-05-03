@@ -11,7 +11,7 @@ public class IndexController {
     //Page Index
     @GetMapping(value = {"/", "/index", "/home"})
     public String index() {
-        return "listRessource";
+        return "list-ressource";
     }
 
     @GetMapping(value = "/login")
@@ -26,6 +26,16 @@ public class IndexController {
 
     @GetMapping(value = "/create")
     public String create() {
-        return "createRessource";
+        return "create-ressource";
+    }
+
+    @GetMapping(value = "/user")
+    public String profil() {
+        return "user-profil";
+    }
+
+    @GetMapping(value = "/read")
+    public String read() {
+        return "read-ressource";
     }
 }
