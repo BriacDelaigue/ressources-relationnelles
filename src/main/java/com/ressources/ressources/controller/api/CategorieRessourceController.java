@@ -15,7 +15,7 @@ public class CategorieRessourceController {
     private CategorieRessourceService categorieRessourceService;
 
     @GetMapping("/api/categorieRessources")
-    public List<CategorieRessource> getCategoriesRessources(){
+    public Iterable<CategorieRessource> getCategoriesRessources(){
         System.out.println(categorieRessourceService);
         return categorieRessourceService.getCategorieRessources();
     }

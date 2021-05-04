@@ -18,7 +18,7 @@ public class CategorieRessource {
 
     private String libelle;
 
-    @OneToMany( targetEntity = Ressource.class, mappedBy = "categorie_ressource")
+    @OneToMany( targetEntity = Ressource.class, mappedBy = "categorieRessource")
     private List<Ressource> ressources = new ArrayList<>();
 
 }

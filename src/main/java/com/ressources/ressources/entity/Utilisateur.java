@@ -34,9 +34,9 @@ public class Utilisateur {
     @JoinTable(name = "Favoris", joinColumns = @JoinColumn(name = "id_utilisateur"),inverseJoinColumns = @JoinColumn(name = "id_ressource"))
     private List<Ressource> ressourceFavoris = new ArrayList<>();
 
-    @ManyToOne @JoinColumn(name = "id_role", nullable = false)
+    @ManyToOne @JoinColumn(name = "role", nullable = false)
     private Role role;
 
-    @OneToMany(targetEntity = Commentaire.class, mappedBy = "commentaire")
+    @OneToMany(targetEntity = Commentaire.class, mappedBy = "utilisateur")
     private List<Commentaire> commentaires = new ArrayList<>();
 }
