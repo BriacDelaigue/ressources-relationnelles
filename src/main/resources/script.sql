@@ -1,85 +1,96 @@
-CREATE TABLE Role(
-   id INT PRIMARY KEY,
-   libelle VARCHAR(255) NOT NULL
+create table categorie_ressource
+(
+    id      int auto_increment
+        primary key,
+    libelle varchar(255) not null
 );
 
-CREATE TABLE Type_Ressource(
-   id INT PRIMARY KEY,
-   libelle VARCHAR(255) NOT NULL
+create table filialite
+(
+    id      int auto_increment
+        primary key,
+    libelle varchar(255) not null
 );
 
-CREATE TABLE Visibilite(
-   id INT PRIMARY KEY,
-   libelle VARCHAR(50) NOT NULL
+create table role
+(
+    id      int auto_increment
+        primary key,
+    libelle varchar(255) not null
 );
 
-CREATE TABLE Filialite(
-   id INT PRIMARY KEY,
-   libelle VARCHAR(50) NOT NULL
+create table type_relation
+(
+    id      int auto_increment
+        primary key,
+    libelle varchar(255) not null
 );
 
-CREATE TABLE Categorie_Ressource(
-   id INT PRIMARY KEY,
-   libelle VARCHAR(50) NOT NULL
+create table type_ressource
+(
+    id      int auto_increment
+        primary key,
+    libelle varchar(255) not null
 );
 
-CREATE TABLE Type_Relation(
-   id INT PRIMARY KEY,
-   lib VARCHAR(50)
+create table utilisateur
+(
+    id      int auto_increment
+        primary key,
+    nom     varchar(255) not null,
+    prenom  varchar(255) not null,
+    verifie tinyint(1)   not null,
+    mail    varchar(255) not null,
+    mdp     varchar(255) not null,
+    role    int          not null,
+    constraint role
+        foreign key (role) references role (id)
 );
 
-CREATE TABLE Personne(
-   id INT PRIMARY KEY,
-   nom VARCHAR(50) NOT NULL,
-   prenom VARCHAR(50) NOT NULL,
-   verifie BOOLEAN NOT NULL,
-   mail VARCHAR(50) NOT NULL,
-   mdp VARCHAR(50) NOT NULL,
-   role_id INT REFERENCES Role(id)
+create table visibilite
+(
+    id      int auto_increment
+        primary key,
+    libelle varchar(255) not null
 );
 
-CREATE TABLE Ressource(
-   pers_id INT REFERENCES Personne(id),
-   id INT PRIMARY KEY,
-   date DATE NOT NULL,
-   texte TEXT,
-   titre VARCHAR(50) NOT NULL,
-   path_file VARCHAR(50),
-   nb_consultations INT,
-   type_id INT REFERENCES Type_Relation(id),
-   cat_id INT REFERENCES Categorie_Ressource(id),
-   vis_id INT REFERENCES Visibilite(id) ,
-   type_id_1 INT REFERENCES Type_Ressource(id)
+create table ressource
+(
+    id                  int auto_increment
+        primary key,
+    date_publication    date         not null,
+    texte               text         null,
+    pathfile            varchar(255) null,
+    nb_consultation     int          null,
+    utilisateur         int          not null,
+    type_ressource      int          null,
+    type_relation       int          null,
+    categorie_ressource int          null,
+    visibilite          int          null,
+    constraint categorie_ressource
+        foreign key (categorie_ressource) references categorie_ressource (id),
+    constraint type_relation
+        foreign key (type_relation) references type_relation (id),
+    constraint type_ressource
+        foreign key (type_ressource) references type_ressource (id),
+    constraint utilisateur
+        foreign key (utilisateur) references utilisateur (id),
+    constraint visibilite
+        foreign key (visibilite) references visibilite (id)
 );
 
-CREATE TABLE Commentaire(
-   pers_id INT NOT NULL,
-   ress_id INT NOT NULL,
-   FOREIGN KEY(pers_id, ress_id) REFERENCES Ressource(pers_id, id),
-   pers_id_3 INT REFERENCES Personne(id),
-   comm_id INT NOT NULL,
-   PRIMARY KEY(pers_id, ress_id, pers_id_3, comm_id),
-   comm_texte TEXT NOT NULL,
-   comm_date DATE NOT NULL,
-   comm_path_image VARCHAR(60),
-   pers_id_1 INT NOT NULL,
-   ress_id_1 INT NOT NULL,
-   pers_id_2 INT NOT NULL,
-   comm_id_1 INT NOT NULL,
-   FOREIGN KEY(pers_id_1, ress_id_1, pers_id_2, comm_id_1) REFERENCES Commentaire(pers_id, ress_id, pers_id, comm_id)
+create table commentaire
+(
+    id           int auto_increment
+        primary key,
+    texte        text         not null,
+    date_poste   date         not null,
+    chemin_image varchar(255) null,
+    ressource    int          not null,
+    utilisateur  int          not null,
+    constraint ressource
+        foreign key (ressource) references ressource (id),
+    constraint utilsateur
+        foreign key (utilisateur) references utilisateur (id)
 );
 
-CREATE TABLE Relation(
-   pers_id INT REFERENCES Personne(id),
-   pers_id_1 INT REFERENCES Personne(id),
-   fill_id INT REFERENCES Filialite(id),
-   PRIMARY KEY(pers_id, pers_id_1, fill_id)
-);
-
-CREATE TABLE Favoriser(
-   pers_id INT REFERENCES Personne(id),
-   pers_id_1 INT NOT NULL,
-   ress_id INT NOT NULL,
-   FOREIGN KEY(pers_id_1, ress_id) REFERENCES Ressource(pers_id, id),
-   PRIMARY KEY(pers_id, pers_id_1, ress_id)
-);
