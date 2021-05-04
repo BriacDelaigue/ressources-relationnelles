@@ -21,25 +21,27 @@ public class Ressource {
     @GeneratedValue
     private long id;
 
-    private Date date ;
+    @JoinColumn(name = "date_publication")
+    private Date datePublication ;
     private String texte;
     private String titre;
-    private String pathFile;
+    private String pathfile;
+    @JoinColumn(name = "nb_consultation")
     private int nbConsultation;
 
-    @ManyToOne @JoinColumn(name = "id_utilisateur",nullable = false)
+    @ManyToOne @JoinColumn(name = "utilisateur",nullable = false)
     private Utilisateur utilisateur;
 
-    @ManyToOne @JoinColumn(name = "id_type_ressource",nullable = false)
+    @ManyToOne @JoinColumn(name = "type_ressource",nullable = false)
     private TypeRessource typeRessource;
 
-    @ManyToOne @JoinColumn(name = "id_type_relation",nullable = false)
+    @ManyToOne @JoinColumn(name = "type_relation",nullable = false)
     private TypeRelation typeRelation;
 
-    @ManyToOne @JoinColumn(name = "id_categorie_ressource",nullable = false)
+    @ManyToOne @JoinColumn(name = "categorie_ressource",nullable = false)
     private CategorieRessource categorieRessource;
 
-    @ManyToOne @JoinColumn(name = "id_visibilite",nullable = false)
+    @ManyToOne @JoinColumn(name = "visibilite",nullable = false)
     private Visibilite visibilite;
 
     @OneToMany(targetEntity = Commentaire.class,mappedBy = "ressource")

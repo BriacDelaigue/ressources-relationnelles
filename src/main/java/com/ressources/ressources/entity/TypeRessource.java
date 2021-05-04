@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "TypeRessource")
+@Table(name = "Type_Ressource")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter

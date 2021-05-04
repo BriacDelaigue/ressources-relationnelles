@@ -20,12 +20,14 @@ public class Commentaire {
     private long id;
 
     private String texte;
-    private String date;
-    private Date cheminImage;
+    @JoinColumn(name = "date_poste")
+    private Date datePoste;
+    @JoinColumn(name = "chemin_image")
+    private String cheminImage;
 
-    @ManyToOne @JoinColumn(name = "id_utilisateur",nullable = false)
+    @ManyToOne @JoinColumn(name = "utilisateur",nullable = false)
     private Utilisateur utilisateur;
 
-    @ManyToOne @JoinColumn(name= "id_ressource",nullable = false)
+    @ManyToOne @JoinColumn(name= "ressource",nullable = false)
     private Ressource ressource;
 }

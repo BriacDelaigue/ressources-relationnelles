@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "TypeRelation")
+@Table(name = "Type_Relation")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
