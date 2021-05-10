@@ -6,17 +6,16 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
-@Controller
+@RestController
 @RequiredArgsConstructor
 public class CategorieRessourceController {
+    @Autowired
     private CategorieRessourceService categorieRessourceService;
 
     @GetMapping("/api/categorieRessources")
     public Iterable<CategorieRessource> getCategoriesRessources(){
-        System.out.println(categorieRessourceService);
         return categorieRessourceService.getCategorieRessources();
     }
 }

@@ -24,14 +24,14 @@ public class Utilisateur {
     private Boolean verifier;
 
     @ManyToMany
-    @JoinTable(name = "Relation", joinColumns = @JoinColumn(name = "id_utilisateur"), inverseJoinColumns = @JoinColumn(name = "id_relation"))
-    private List<TypeRelation> typeRelations = new ArrayList<>();
+    @JoinTable(name = "Relation", joinColumns = @JoinColumn(name = "utilisateur"), inverseJoinColumns = @JoinColumn(name = "Filialite"))
+    private  List<Utilisateur> relations = new ArrayList<>();
 
     @OneToMany(targetEntity = Ressource.class, mappedBy = "utilisateur")
     private List<Ressource> ressources = new ArrayList<>();
 
     @ManyToMany
-    @JoinTable(name = "Favoris", joinColumns = @JoinColumn(name = "id_utilisateur"),inverseJoinColumns = @JoinColumn(name = "id_ressource"))
+    @JoinTable(name = "Favoris", joinColumns = @JoinColumn(name = "utilisateur"),inverseJoinColumns = @JoinColumn(name = "ressource"))
     private List<Ressource> ressourceFavoris = new ArrayList<>();
 
     @ManyToOne @JoinColumn(name = "role", nullable = false)
