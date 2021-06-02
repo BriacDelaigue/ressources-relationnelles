@@ -23,5 +23,5 @@ public class Role {
     private String libelle;
 
     @OneToMany(targetEntity = Utilisateur.class,mappedBy = "role")
-    private List<Role> roles = new ArrayList<>();
+    private List<Utilisateur> utilisateurs = new ArrayList<>();
 }
