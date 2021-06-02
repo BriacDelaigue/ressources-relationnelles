@@ -1,5 +1,6 @@
 package com.ressources.ressources.entity;
 
+import com.sun.istack.NotNull;
 import lombok.*;
 
 import javax.persistence.*;
@@ -19,22 +20,26 @@ public class Utilisateur {
 
     private String nom;
     private String prenom;
+    @NotNull
     private String mail;
+    @NotNull
     private String mdp;
+    @NotNull
     private Boolean verifier;
 
     @ManyToMany
     @JoinTable(name = "Relation", joinColumns = @JoinColumn(name = "utilisateur"), inverseJoinColumns = @JoinColumn(name = "Filialite"))
-    private  List<Utilisateur> relations = new ArrayList<>();
+    private List<Utilisateur> relations = new ArrayList<>();
 
     @OneToMany(targetEntity = Ressource.class, mappedBy = "utilisateur")
     private List<Ressource> ressources = new ArrayList<>();
 
     @ManyToMany
-    @JoinTable(name = "Favoris", joinColumns = @JoinColumn(name = "utilisateur"),inverseJoinColumns = @JoinColumn(name = "ressource"))
+    @JoinTable(name = "Favoris", joinColumns = @JoinColumn(name = "utilisateur"), inverseJoinColumns = @JoinColumn(name = "ressource"))
     private List<Ressource> ressourceFavoris = new ArrayList<>();
 
-    @ManyToOne @JoinColumn(name = "role", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "role", nullable = false)
     private Role role;
 
     @OneToMany(targetEntity = Commentaire.class, mappedBy = "utilisateur")

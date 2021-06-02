@@ -25,9 +25,11 @@ public class Commentaire {
     @JoinColumn(name = "chemin_image")
     private String cheminImage;
 
-    @ManyToOne @JoinColumn(name = "utilisateur",nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "utilisateur", nullable = false)
     private Utilisateur utilisateur;
 
-    @ManyToOne @JoinColumn(name= "ressource",nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "ressource", nullable = false)
     private Ressource ressource;
 }
