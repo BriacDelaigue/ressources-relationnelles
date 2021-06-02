@@ -27,7 +27,7 @@ public class CategorieRessourceService {
         categorieRessourceRepository.deleteById(id);
     }
 
-    public CategorieRessource createCategorieRessorce(CategorieRessource categorieRessource){
+    public CategorieRessource saveCategorieRessource(CategorieRessource categorieRessource) {
         return categorieRessourceRepository.save(categorieRessource);
     }
 }

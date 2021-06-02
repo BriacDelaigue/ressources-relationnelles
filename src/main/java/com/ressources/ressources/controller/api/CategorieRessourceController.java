@@ -4,9 +4,7 @@ import com.ressources.ressources.entity.CategorieRessource;
 import com.ressources.ressources.service.CategorieRessourceService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -15,7 +13,7 @@ import java.util.Optional;
 public class CategorieRessourceController {
     @Autowired
     private CategorieRessourceService categorieRessourceService;
-    private final String API = "/api/categorie-ressources";
+    private static final String API = "/api/categorie-ressources";
 
     @GetMapping(API)
     public Iterable<CategorieRessource> getCategorieRessources() {
@@ -25,5 +23,25 @@ public class CategorieRessourceController {
     @GetMapping(API + "/{id}")
     public Optional<CategorieRessource> getCategorieRessource(@PathVariable int id) {
         return categorieRessourceService.getCategorieRessource(id);
+    }
+
+    @PostMapping(API)
+    public CategorieRessource createCategorieRessource(@RequestParam(value = "libelle") String libelle) {
+        var categorieRessource = new CategorieRessource();
+        categorieRessource.setLibelle(libelle);
+        return categorieRessourceService.saveCategorieRessource(categorieRessource);
+    }
+
+    @PutMapping(value = API + "/update")
+    public CategorieRessource editCategorieRessource(@RequestParam(value = "libelle") String libelle, @RequestParam(value = "id")int id){
+        var categorieRessource = new CategorieRessource();
+        categorieRessource.setId(id);
+        categorieRessource.setLibelle(libelle);
+        return categorieRessourceService.saveCategorieRessource(categorieRessource);
+    }
+
+    @DeleteMapping(value = API + "/{id}")
+    public void deleteCategorieRessource(@PathVariable int id) {
+        categorieRessourceService.deleteCategorieRessource(id);
     }
 }

@@ -1,0 +1,19 @@
+POST http://localhost:8080/api/categorie-ressources
+Content-Type: application/json
+
+{
+  "libelle":"test"
+}
+
+
+
+###
+GET http://localhost:8080/api/categorie-ressources
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/categorie-ressources/1
+Accept: application/json
+
+###
