@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class CategorieRessourceService {
@@ -14,7 +16,18 @@ public class CategorieRessourceService {
 
 
     public Iterable<CategorieRessource> getCategorieRessources() {
-        System.out.println(categorieRessourceRepository.findAll());
         return categorieRessourceRepository.findAll();
+    }
+
+    public Optional<CategorieRessource> getCategorieRessource(int id) {
+        return categorieRessourceRepository.findById(id);
+    }
+
+    public void deleteCategorieRessource(int id) {
+        categorieRessourceRepository.deleteById(id);
+    }
+
+    public CategorieRessource createCategorieRessorce(CategorieRessource categorieRessource){
+        return categorieRessourceRepository.save(categorieRessource);
     }
 }
